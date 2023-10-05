@@ -19,7 +19,6 @@ def ice_break_with(name: str) -> Tuple[Summary, IceBreaker, TopicOfInterest, str
     linkedin_username = linkedin_lookup_agent(name=name)
     linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username)
 
-    # Removed Twitter-related code
     summary_chain = get_summary_chain()
     summary_and_facts = summary_chain.run(information=linkedin_data)
     summary_and_facts = summary_parser.parse(summary_and_facts)

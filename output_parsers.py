@@ -1,5 +1,5 @@
+# External Dependencies
 from typing import List
-
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 
@@ -28,6 +28,7 @@ class TopicOfInterest(BaseModel):
         return {"topics_of_interest": self.topics_of_interest}
 
 
+# Instantiate Pydantic objects
 summary_parser = PydanticOutputParser(pydantic_object=Summary)
 ice_breaker_parser = PydanticOutputParser(pydantic_object=IceBreaker)
 topics_of_interest_parser = PydanticOutputParser(pydantic_object=IceBreaker)
